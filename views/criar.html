@@ -1,0 +1,18 @@
+<div class="row">
+    {{message}}
+    <h4 class="col-12">Nova Tarefa</h4>
+    <div class="col-12">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input class="form-control" ng-model="tarefa.nome" type="text" id="nome">
+        </div>
+        <div class="form-group">
+            <label for="prazo">Prazo</label>
+            <input class="form-control" ng-model="tarefa.prazo" type="text" id="prazo">
+        </div>
+    </div>
+    <div class="col-12">
+        <a class="btn btn-outline-secondary" href="#/">Cancelar</a>
+        <button ng-click="criarTarefa()" class="btn btn-outline-primary" style="margin-left:10px">Nova Tarefa</button>
+    </div>
+</div>

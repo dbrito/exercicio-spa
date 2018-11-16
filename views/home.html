@@ -1,0 +1,33 @@
+<div class="row">
+    <h2 class="col-md-6">Lista de tarefas</h2>
+    <div class="col-md-6 text-right">
+        <input ng-model="mostrarTerminadas" type="checkbox" id="mostrarTerminadas">
+        <label for="mostrarTerminadas">Mostrar Terminadas</label>
+        <button ng-click="removeTarefasTerminadas()" class="btn btn-outline-secondary" style="margin-left:10px;">Remover Terminadas</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Terminada</th>
+                    <th>Tarefa</th>
+                    <th>Prazo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tarefa in tarefas | filter:filtroTarefas" class="{{(tarefa.terminada) ? 'cifrada' : ''}}">
+                    <td>
+                        <input type="checkbox" name="" id="" ng-model="tarefa.terminada">
+                    </td>
+                    <td style="width:60%">{{tarefa.nome}}</td>
+                    <td>
+                        {{tarefa.prazo}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a class="btn btn-outline-primary" href="#/criar">Criar Tarefa</a>
+    </div>
+</div>
